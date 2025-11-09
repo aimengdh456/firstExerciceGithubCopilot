@@ -157,21 +157,46 @@ footer {
 }
 
 .participants-list ul {
-  list-style: disc;
-  padding-left: 20px;
+  /* hide default bullets and reset padding so we can render pill-like items */
+  list-style: none;
+  padding-left: 0;
   margin: 0;
 }
 
 .participant-item {
   display: inline-block;
+  position: relative; /* for absolute-positioned delete button */
   background: #eef2ff;
   color: #1a237e;
-  padding: 6px 10px;
+  padding: 6px 28px 6px 10px; /* extra right padding for the close button */
   border-radius: 999px;
   margin: 4px 6px 4px 0;
   font-size: 13px;
   line-height: 1;
   border: 1px solid rgba(26,35,126,0.08);
+}
+
+.participant-item .participant-email {
+  display: inline-block;
+}
+
+.participant-item .delete-participant {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #b91c1c;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0;
+  font-size: 14px;
+}
+
+.participant-item .delete-participant:hover {
+  color: #7f1d1d;
 }
 
 .no-participants {
